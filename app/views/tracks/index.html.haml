@@ -1,0 +1,29 @@
+%h1 Listing tracks
+
+%table
+  %tr
+    %th Song name
+    %th Artist
+    %th Album name
+    %th Genre
+    %th Length
+    %th
+    %th
+    %th
+
+
+- @tracks.each do |track| 
+  %tr
+    %td= track.song_name 
+    %td= track.artist 
+    %td= track.album_name 
+    %td= track.genre 
+    %td= track.length 
+    %td= link_to 'Show', track 
+    %td= link_to 'Edit', edit_track_path(track) 
+    %td= link_to 'Destroy', track, method: :delete, data: { confirm: 'Are you sure?' } 
+  
+
+%br
+
+= link_to 'New Track', new_track_path 
