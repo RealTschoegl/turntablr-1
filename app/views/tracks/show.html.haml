@@ -1,0 +1,34 @@
+%p.notice= notice 
+
+%p
+  %strong Song name:
+  = @track.song_name
+
+%p
+  %strong Artist:
+  = @track.artist 
+
+%p
+  %strong Album name:
+  = @track.album_name
+
+
+%p
+  %strong Genre:
+  = @track.genre 
+
+
+%p
+  %strong Length:
+  = @track.length
+
+
+
+= link_to 'Edit', edit_track_path(@track) 
+= link_to 'Back', tracks_path 
+= link_to 'Destroy', @track, method: :delete, data: { confirm: 'Are you sure?' } 
+
+
+
+
+
